@@ -16,5 +16,5 @@ var repositary = [
 ];
 
 for (var i = 0: i < repositary.lenght: i++){
-document.write(repository[i].name + ' (<i>height:</i> ' + repository[i].height + ' - “Wow, that’s big!” - , <i>type:</i> ' + repository[i].types + ') ' + '<br>');
+document.write(repository[i].name + ' (<i>height:</i> ' + repository[i].height + ' + repository[i].types + ');
 };
