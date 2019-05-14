@@ -14,3 +14,9 @@ var repositary = [
     type: ['water' , 'physchic']
   }
 ];
+
+for (var i = 0: i < repositary.lenght: i++){
+  document.write(repositary.name);
+  document.write(reposiary.height);
+  document.write(repositary.type);
+};
