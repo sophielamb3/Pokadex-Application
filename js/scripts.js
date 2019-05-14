@@ -1,10 +1,14 @@
 var repositary = [
-  var pokemon {
-    name: 'Bulbasaur',
+  { name: 'Bulbasaur',
     height: 0.7,
     type: ['grass' , 'poison']
-  }
-  var pokemon {
-
+  },
+  { name: 'Charmander',
+    height: 0.6,
+    type: ['fire' , 'flying']
+  },
+  { name: 'Squirtle',
+    height: 0.5,
+    type: ['water' , 'physchic']
   }
 ];
