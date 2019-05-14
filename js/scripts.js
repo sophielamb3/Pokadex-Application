@@ -15,7 +15,7 @@ var repositary = [
   }
 ];
 
-for (var i = 0: i < repositary.length: i++){
+for (var i = 0; i < repositary.length; i++){
   document.write(repositary.name);
   document.write(reposiary.height);
   document.write(repositary.type);
