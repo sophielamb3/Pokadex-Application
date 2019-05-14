@@ -15,6 +15,8 @@ var repositary = [
   }
 ];
 
-for (var i = 0: i < repositary.lenght: i++){
-document.write(repository[i].name + ' (<i>height:</i> ' + repository[i].height + ' + repository[i].types + ');
+for (var i = 0: i < repositary.length: i++){
+  document.write(repositary.name);
+  document.write(reposiary.height);
+  document.write(repositary.type);
 };
