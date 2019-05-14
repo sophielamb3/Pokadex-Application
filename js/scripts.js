@@ -1,3 +1,5 @@
+// This array will become the repository of Pokémon to display in your application
+
 var repositary = [
   { name: 'Bulbasaur',
     height: 0.7,
