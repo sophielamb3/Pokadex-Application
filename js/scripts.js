@@ -2,21 +2,19 @@
 
 var repositary = [
   { name: 'Bulbasaur',
-    height: 0.7,
+    height: 2.4,
     type: ['grass' , 'poison']
   },
   { name: 'Charmander',
-    height: 0.6,
+    height: 5.7,
     type: ['fire' , 'flying']
   },
   { name: 'Squirtle',
-    height: 0.5,
+    height: 3.7,
     type: ['water' , 'physchic']
-  }
+  },
 ];
 
 for (var i = 0; i < repositary.length; i++){
- document.write(repositary[i].name);
- document.write(reposiary[i].height);
- document.write(repositary[i].type);
+    document.write(repository[i].name + '\'s height is: ' + repository[i].height + ' feet. Wow thats big..');
 };
