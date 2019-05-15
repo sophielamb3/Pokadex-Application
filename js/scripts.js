@@ -20,5 +20,5 @@ var repository = [
 ];
 
 for (var i = 0; i < repository.length; i++){
-    document.write(repository[i].name + '\'s height is: ' + repository[i].height + ' feet.' + repository[i].types + '<br>');
+    document.write(repository[i].name + '\'s height is: ' + repository[i].height + ' feet.' + "My powers are:" + repository[i].types + '<br>');
 }
