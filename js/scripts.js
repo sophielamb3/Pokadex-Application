@@ -17,4 +17,4 @@ var repositary = [
 
 for (var i = 0; i < repositary.length; i++){
     document.write(repository[i].name + '\'s height is: ' + repository[i].height + ' feet. Wow thats big..');
-};
+}
