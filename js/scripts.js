@@ -21,7 +21,7 @@ var repository = [
 
 for (var i = 0; i < repository.length; i++){
   if (repository[i].height > 4){
-    document.write(repository[i].name + '\'s height is: ' + repository[i].height + ' feet.' + '<br>' + "WOW! Thats big!" + "My powers are:" + repository[i].types + '<br>');
+    document.write(repository[i].name + '\'s height is: ' + repository[i].height + ' feet.'  + "WOW! Thats big!" + '<br>' + "My powers are:" + repository[i].types + '<br>');
   } else {
     document.write(repository[i].name + '\'s height is: ' + repository[i].height + ' feet.' + '<br>'  + "My powers are:" + repository[i].types + '<br>');
   }
