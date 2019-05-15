@@ -20,5 +20,5 @@ var repository = [
 ];
 
 for (var i = 0; i < repository.length; i++){
-    document.write(repository[i].name + '\'s height is: ' + repository[i].height + ' feet.' + repository[i].types);
+    document.write(repository[i].name + '\'s height is: ' + repository[i].height + ' feet.' + repository[i].types + '<br>');
 }
