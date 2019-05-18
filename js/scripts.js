@@ -28,5 +28,5 @@ var repository = [
 // }
 
 Object.keys(repository).forEach(function(property){
-    console.log(repository[property]);
+    document.write(repository[property]);
 });
