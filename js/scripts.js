@@ -26,3 +26,7 @@ var repository = [
 //    document.write(repository[i].name + '\'s height is: ' + repository[i].height + ' feet.' + '<br>'  + "My powers are:" + repository[i].types + '<br>');
 //  }
 // }
+
+Object.keys(repository).forEach(function(property){
+    console.log(repository[property]);
+});
