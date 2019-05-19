@@ -27,6 +27,7 @@ var repository = [
 //  }
 // }
 
+
 Object.keys(repository).forEach(function(property) {
-  document.write(property + ': ' + repository[property] + '<br>');
+  document.write(repository[property].name + ': ' + '<br>' + repository[property].height + '<br>' + repository[property].types + '<br>');
 });
