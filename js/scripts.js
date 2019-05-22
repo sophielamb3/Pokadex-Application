@@ -1,5 +1,5 @@
 // This array will become the repository of Pokémon to display in your application
-// var pokemonRepository = (function () {
+var pokemonRepository = (function () {
   var repository = [
       {
           name: 'Bulbasaur',
@@ -18,21 +18,26 @@
       },
     ];
 
-//  function add(pokemon){
-  //  repository.push(pokemon);
-//  }
+  function add(pokemon){
+    repository.push(pokemon);
+  }
 
-//  function getAll() {
-//    return repository;
-//  }
+  function getAll() {
+    return repository;
+  }
 
-//  return {
-//    add: add,
-//    getAll: getAll
-//  };
-// })();
+  return {
+    add: add,
+    getAll: getAll
+  };
+})();
 
 
 Object.keys(repository).forEach(function(property) {
   document.write(repository[property].name + ': ' + '<br>' + repository[property].height + '<br>' + repository[property].types + '<br>');
 });
+
+// var pokemons = pokemonRepository.getAll()
+//Object.keys(pokemons).forEach(function(property) {
+  //document.write(pokemons[property].name + ': ' + '<br>' + pokemons[property].height + '<br>' + pokemons[property].types + '<br>');
+// }());
