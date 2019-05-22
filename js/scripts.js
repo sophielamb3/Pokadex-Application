@@ -31,11 +31,16 @@ var pokemonRepository = (function () {
     getAll: getAll
   };
 
+
+
+
+
+
 })();
 
 
 
 
-Object.keys(repository).forEach(function(pokemon) {
-  document.write(repository[pokemon].name + ': ' + '<br>' + repository[pokemon].height + '<br>' + repository[pokemon].types + '<br>');
+Object.keys(repository).forEach(function(property) {
+  document.write(repository[property].name + ': ' + '<br>' + repository[property].height + '<br>' + repository[property].types + '<br>');
 });
