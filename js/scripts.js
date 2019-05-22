@@ -18,27 +18,19 @@ var pokemonRepository = (function () {
       },
     ];
 
-  function add(pokemon){
-    repository.push(pokemon);
-  }
+//  function add(pokemon){
+  //  repository.push(pokemon);
+//  }
 
-  function getAll() {
-    return repository;
-  }
+//  function getAll() {
+//    return repository;
+//  }
 
-  return {
-    add: add,
-    getAll: getAll
-  };
-
-
-
-
-
-
-})();
-
-
+//  return {
+//    add: add,
+//    getAll: getAll
+//  };
+// })();
 
 
 Object.keys(repository).forEach(function(property) {
