@@ -32,10 +32,15 @@ var pokemonRepository = (function () {
   };
 })();
 
+var allPokemons = pokemonRepository.getAll()
+console.log(allPokemons)
+allPokemons.forEach(function (pokemon) {
+  return (document.write(pokemon.name + ': ' + '<br>' + pokemon.height + '<br>' + pokemon.types + '<br>'))
+})
 
-Object.keys(repository).forEach(function(property) {
-  document.write(repository[property].name + ': ' + '<br>' + repository[property].height + '<br>' + repository[property].types + '<br>');
-});
+//Object.keys(repository).forEach(function(property) {
+//  document.write(repository[property].name + ': ' + '<br>' + repository[property].height + '<br>' + repository[property].types + '<br>');
+//});
 
 // var pokemons = pokemonRepository.getAll()
 //Object.keys(pokemons).forEach(function(property) {
