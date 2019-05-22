@@ -1,5 +1,5 @@
 // This array will become the repository of Pokémon to display in your application
-var pokemonRepository = (function () {
+// var pokemonRepository = (function () {
   var repository = [
       {
           name: 'Bulbasaur',
