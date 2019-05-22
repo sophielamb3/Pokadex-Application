@@ -38,6 +38,8 @@ allPokemons.forEach(function (pokemon) {
   return (document.write(pokemon.name + ': ' + '<br>' + pokemon.height + '<br>' + pokemon.types + '<br>'))
 })
 
+// NOTE code below wouldn't work before as i was trying to define a local variable rather than global!!! //
+
 //Object.keys(repository).forEach(function(property) {
 //  document.write(repository[property].name + ': ' + '<br>' + repository[property].height + '<br>' + repository[property].types + '<br>');
 //});
