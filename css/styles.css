@@ -22,7 +22,7 @@ h1 {
 }
 
 .grid__item {
-  background-color: #c2c0c2;
+  background-color: #f3f5f5;
   padding: 15px;
 
   /* sets width to auto */
@@ -43,9 +43,10 @@ button,
 
   /* takes the font from the outer container */
   font-family: inherit;
+  font-size: 16px;
 
   /* styles the background color, font color, and text decoration (underline, etc.) of the button */
-  background-color: #2b2b2b;
+  background-color: #02648f;
   color: #ffff !important;
   text-decoration: none;
 
@@ -67,4 +68,8 @@ button:focus,
 
   /* opacity will reduce to 80% when hovered over */
   opacity: 0.8;
+}
+
+ul {
+  list-style-type: none;
 }
