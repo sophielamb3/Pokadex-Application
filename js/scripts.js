@@ -35,7 +35,7 @@ var pokemonRepository = (function () {
 var allPokemons = pokemonRepository.getAll()
 console.log(allPokemons)
 allPokemons.forEach(function (pokemon) {
-  return (document.write(pokemon.name + ': ' + '<br>' + pokemon.height + '<br>' + pokemon.types + '<br>'))
+  return ((pokemon.name + ': ' + '<br>' + pokemon.height + '<br>' + pokemon.types + '<br>'))
 })
 
 // NOTE code below wouldn't work before as i was trying to define a local variable rather than global!!! //
