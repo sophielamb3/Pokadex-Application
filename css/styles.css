@@ -12,3 +12,18 @@ h1 {
   font-weight: 700;
   line-height: 1.6;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 20px;
+  padding: 15px;
+}
+
+.grid__item {
+  background-color: #c2c0c2;
+  padding: 15px;
+
+  /* sets width to auto */
+  width: auto;
+}
