@@ -11,7 +11,7 @@ h1 {
   color: #0b3538;
   font-weight: 700;
   line-height: 1.6;
-  padding: 15px;
+  padding: auto;
 }
 
 .grid {
