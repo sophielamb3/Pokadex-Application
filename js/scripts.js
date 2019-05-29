@@ -1,30 +1,10 @@
 // This array will become the repository of Pokémon to display in your application
 var pokemonRepository = (function () {
-  var repository = [
-      {
-          name: 'Bulbasaur',
-          height: 2.4,
-          types: ['grass', 'poison']
-      },
-      {
-          name: 'Charizard',
-          height: 5.7,
-          types: ['fire', 'flying']
-      },
-      {
-          name: 'Butterfree',
-          height: 3.7,
-          types: ['bug', 'flying']
-      },
-      {
-          name: 'Pikachu',
-          height: 1.5,
-          types: ['yellow', 'cute']
-      },
-    ];
+  var repository = [];
+  var apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
-  function add(pokemon){
-    repository.push(pokemon);
+  function add(item){
+    repository.push(item);
   }
 
   function getAll() {
@@ -48,22 +28,64 @@ var pokemonRepository = (function () {
 
   }
 
-  function showDetails(pokemon){
-    console.log(pokemonObject)
+  function showDetails(item) {
+  pokemonRepository.loadDetails(item).then(function (response) {
+    console.log(item);   });
   }
+
+  function loadList() {
+    return fetch(apiUrl).then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      json.results.forEach(function (item) {
+        var pokemon = {
+          name: item.name,
+          detailsUrl: item.url
+        };
+        add(pokemon);
+      });
+    }).catch(function (e) {
+      console.error(e);
+    })
+  }
+
+  function loadDetails(item) {
+    var url = item.detailsUrl;
+    return fetch(url).then(function (response) {
+      return response.json();
+    }).then(function (details) {
+      // Now we add the details to the item
+      item.imageUrl = details.sprites.front_default;
+      item.height = details.height;
+      item.types = Object.keys(details.types);
+    }).catch(function (e) {
+      console.error(e);
+    });
+  }
+
 
   return {
     add: add,
     getAll: getAll,
-    addListItem: addListItem
+    addListItem: addListItem,
+    showDetails: showDetails,
+    loadList: loadList,
+    loadDetails: loadDetails
   };
 })();
 
-var allPokemons = pokemonRepository.getAll()
-console.log(allPokemons)
-allPokemons.forEach(function (pokemon) {
-  return (pokemonRepository.addListItem(pokemon)
-)})
+
+pokemonRepository.loadList().then(function() {
+  pokemonRepository.getAll().forEach(function(pokemon){
+    pokemonRepository.addListItem(pokemon);
+  });
+});
+
+//var allPokemons = pokemonRepository.getAll()
+//console.log(allPokemons)
+//allPokemons.forEach(function (pokemon) {
+//  return (pokemonRepository.addListItem(pokemon)
+// )})
 
 // NOTE code below wouldn't work before as i was trying to define a local variable rather than global!!! //
 
