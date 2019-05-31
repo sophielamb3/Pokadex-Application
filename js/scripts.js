@@ -18,19 +18,24 @@ var pokemonRepository = (function () {
 
     $newListItem.setAttribute('class','grid');
     $newButton.setAttribute('class', 'button');
+
     $div.appendChild($newListItem);
     $div.appendChild($newButton);
+
     $newButton.innerText = pokemonObject.name;
+
     $newButton.addEventListener ('click',
       function (event) {
-        console.log(event.target.innerText);
+        showDetails(pokemonObject.detailsUrl)
+        //console.log(event.target.innerText);
     });
 
   }
 
   function showDetails(item) {
   pokemonRepository.loadDetails(item).then(function (response) {
-    console.log(item);   });
+      console.log(response)
+    });
   }
 
   function loadList() {
@@ -50,14 +55,18 @@ var pokemonRepository = (function () {
   }
 
   function loadDetails(item) {
-    var url = item.detailsUrl;
+    console.log(item)
+    var url = item;
     return fetch(url).then(function (response) {
       return response.json();
     }).then(function (details) {
       // Now we add the details to the item
-      item.imageUrl = details.sprites.front_default;
-      item.height = details.height;
-      item.types = Object.keys(details.types);
+      let detail = {}
+      detail.imageUrl = details.sprites.front_default;
+      detail.height = details.height;
+      detail.types = Object.keys(details.types);
+
+      return detail
     }).catch(function (e) {
       console.error(e);
     });
