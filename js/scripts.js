@@ -33,19 +33,22 @@ var pokemonRepository = (function () {
   }
 
   function showDetails(item) {
-  pokemonRepository.loadDetails(item).then(function (response) {
-      console.log(response)
+  pokemonRepository.loadDetails(item).then(function () {
+      showModal(item)
     });
   }
 
   function loadList() {
-    return fetch(apiUrl).then(function (response) {
-      return response.json();
+    return fetch(apiUrl, {
+      method: 'GET'
+    })
+      .then(function (response) {
+        return response.json();
     }).then(function (json) {
-      json.results.forEach(function (item) {
-        var pokemon = {
-          name: item.name,
-          detailsUrl: item.url
+        json.results.forEach(function (item) {
+          var pokemon = {
+            name: item.name,
+            detailsUrl: item.url
         };
         add(pokemon);
       });
@@ -73,13 +76,71 @@ var pokemonRepository = (function () {
   }
 
 
+    function showModal(item){
+      var $modalContainer = document.querySelector('#modal-container');
+
+      $modalContainer.innerHTML= '';
+
+      var modal = document.createElement('div');
+      modal.classList.add('modal');
+
+      var closeButtonElement = document.createElement('button');
+      closeButtonElement.classList.add('modal-close');
+      closeButtonElement.innerText = 'Close';
+      closeButtonElement.addEventListener('click', hideModal);
+
+      var nameElement = document.createElement('h1');
+      nameElement.innerText = 'My name is ' + item.name;
+
+      var imageElement = document.createElement('img');
+      imageElement.classList.add('modal-img');
+      imageElement.setAttribute("src", item.imageUrl);
+
+      var heightElement = document.createElement('p');
+      heightElement.innerText = 'Height: ' + item.height;
+
+      var typesElement = document.createElement('p');
+      typesElement.innerText = 'Types: ' + item.types;
+
+      modal.appendChild(closeButtonElement);
+      modal.appendChild(nameElement);
+      modal.appendChild(imageElement);
+      modal.appendChild(heightElement);
+      modal.appendChild(typesElement);
+      $modalContainer.appendChild(modal);
+      $modalContainer.classList.add('is-visible');
+    }
+
+    function hideModal(){
+      var $modalContainer = document.querySelector('#modal-container');
+      $modalContainer.classList.remove('is-visible');
+    }
+
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && $modalContainer.classList.contains('is-visible')){
+        hideModal();
+      }
+    });
+
+  var $modalContainer = document.querySelector('#modal-container');
+  $modalContainer.addEventListener('click', (e) => {
+    var target = e.target;
+    if(target === $modalContainer){
+      hideModal();
+    }
+  });
+
+
   return {
     add: add,
     getAll: getAll,
     addListItem: addListItem,
     showDetails: showDetails,
     loadList: loadList,
-    loadDetails: loadDetails
+    loadDetails: loadDetails,
+    showModal: showModal,
+    hideModal: hideModal
   };
 })();
 
