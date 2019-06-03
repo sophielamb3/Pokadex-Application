@@ -33,9 +33,12 @@ var pokemonRepository = (function () {
   }
 
   function showDetails(item) {
-  pokemonRepository.loadDetails(item).then(function () {
-      showModal(item)
-    });
+  pokemonRepository.loadDetails(item).then(function (res) {
+      showModal(res)
+        success
+    }).catch(function(err){
+      console.log(err)
+    })
   }
 
   function loadList() {
@@ -65,9 +68,11 @@ var pokemonRepository = (function () {
     }).then(function (details) {
       // Now we add the details to the item
       let detail = {}
-      detail.imageUrl = details.sprites.front_default;
+      detail.name = details.name;
       detail.height = details.height;
       detail.types = Object.keys(details.types);
+      detail.imageUrl = details.sprites.front_default;
+
 
       return detail
     }).catch(function (e) {
@@ -104,9 +109,9 @@ var pokemonRepository = (function () {
 
       modal.appendChild(closeButtonElement);
       modal.appendChild(nameElement);
-      modal.appendChild(imageElement);
       modal.appendChild(heightElement);
       modal.appendChild(typesElement);
+      modal.appendChild(imageElement);
       $modalContainer.appendChild(modal);
       $modalContainer.classList.add('is-visible');
     }

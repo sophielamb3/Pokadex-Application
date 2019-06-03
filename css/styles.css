@@ -108,10 +108,10 @@ ul {
 
 .modal-img {
   display: block;
-  margin-left: auto;
+  margin-left: 10px;
   margin-right: auto;
-  width: 50%;
-  height: auto;
+  width: 150px;
+  height: 150px;
 }
 
 .modal.close {
